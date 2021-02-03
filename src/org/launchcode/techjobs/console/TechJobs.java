@@ -108,17 +108,18 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        boolean isValidEntry = false;
 
         for(HashMap<String, String> job : someJobs) {
-            if (someJobs.size() == 0) {
-                System.out.println("We can't find your search, try another value.");
-            } else {
                 System.out.println("*****");
                 for (Map.Entry<String, String> entry : job.entrySet()) {
+                    isValidEntry = true;
                     System.out.println(entry.getKey() + ": " + entry.getValue());
                 }
                 System.out.println("*****\n");
-            }
+        }
+        if(isValidEntry == false){
+            System.out.println("Sorry, we can't find any results for your search.");
         }
     }
 }
